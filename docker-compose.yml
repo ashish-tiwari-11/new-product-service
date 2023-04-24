@@ -7,20 +7,23 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: aceEM@11
       MYSQL_DATABASE: product-db
+    ports:
+      - 3306:3306
     networks:
-      mysql-springboot-network:
+      - mysql-springboot-network
 
   product-service:
     container_name: product-service-container
     build:
       context: ./
       dockerfile: Dockerfile
+    image: ashisht11/new-product-service
     ports:
-      - "8086:8086"
+      - 8086:8086
     depends_on:
       - mysqldb8
     networks:
-      mysql-springboot-network:
+      - mysql-springboot-network
     restart: on-failure
 networks:
   mysql-springboot-network:
