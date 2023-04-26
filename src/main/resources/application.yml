@@ -44,3 +44,13 @@ spring:
     username: root
     password: aceEM@11
     driver-class-name: com.mysql.cj.jdbc.Driver
+---
+spring:
+  config:
+    activate:
+      on-profile: aws
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: admin
+    password: aceEM121
+    url: jdbc:mysql://database-1.cuknd89tthim.ap-south-1.rds.amazonaws.com:3306/product_db

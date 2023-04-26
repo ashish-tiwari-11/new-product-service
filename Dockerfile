@@ -6,4 +6,4 @@ WORKDIR /app
 
 COPY target/productService.jar /app/productService.jar
 
-ENTRYPOINT ["java","-Dspring.profiles.active=docker", "-jar", "productService.jar"]
+ENTRYPOINT ["java","-Dspring.profiles.active=aws", "-jar", "productService.jar"]
